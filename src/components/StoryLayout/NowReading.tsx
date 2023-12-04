@@ -43,7 +43,7 @@ function StoryBuffer() {
     >
       <Tooltip title="Previous chapter">
         <IconButton color="primary">
-          <FastRewind fontSize={isDesktop ? "large" : "small"} />
+          <FastRewind fontSize={isDesktop ? "large" : "medium"} />
         </IconButton>
       </Tooltip>
       <Box
@@ -68,7 +68,7 @@ function StoryBuffer() {
       </Box>
       <Tooltip title="Next chapter">
         <IconButton color="primary">
-          <FastForward fontSize={isDesktop ? "large" : "small"} />
+          <FastForward fontSize={isDesktop ? "large" : "medium"} />
         </IconButton>
       </Tooltip>
     </Stack>

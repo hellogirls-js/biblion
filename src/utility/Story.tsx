@@ -12,7 +12,7 @@ export default function Story() {
         variant="h3"
         component="h3"
         textAlign="center"
-        fontSize="1.5rem"
+        fontSize="1.8rem"
       >
         Chapter 1: {storyInfo.chapters[0]}
       </Typography>

@@ -1,11 +1,21 @@
-import { ReactElement, createContext } from "react";
+import { Fragment, ReactElement, createContext } from "react";
+import { StoryType } from "../types/main";
+import { Typography } from "@mui/material";
 
 const defaultValue: StoryType = {
   title: "niki nii-san",
   author: "son",
   authorProfileLink: "https://about.hellogirls.info",
-  summary:
-    "Rinne takes a nap on the couch and wakes up when Niki comes home from work with groceries. At least, he thinks that's Niki... (a 1000 word demo)",
+  summary: (
+    <Fragment>
+      <Typography mt={2}>
+        Rinne wakes up from his nap on the sofa when Niki walks into the
+        apartment with a handful of grocery bags.
+      </Typography>
+      <Typography mt={2}>... At least he thinks that's Niki.</Typography>
+      <Typography mt={2}>(A 1000 word demo, enjoy!)</Typography>
+    </Fragment>
+  ),
   chapters: ["Who are you...?"],
   characters: [
     {

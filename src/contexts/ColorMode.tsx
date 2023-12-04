@@ -11,9 +11,11 @@ import {
   LIGHT_MODE_COLORS,
   LIGHT_PALETTE,
 } from "../utility/colors";
+import { ColorModeContextType } from "../types/main";
 
 const NUNITO_FONT = "'Nunito Sans', sans-serif";
 const INTER_FONT = "'Inter', sans-serif";
+const SERIF_FONT = "'Crimson Pro', serif";
 const BOLD_WEIGHT = 700;
 
 export const ColorModeContext = createContext<ColorModeContextType>({
@@ -53,15 +55,16 @@ export default function ColorModeProvider({
       fontFamily: INTER_FONT,
       h1: {
         fontFamily: NUNITO_FONT,
-        fontSize: "3rem",
+        fontSize: "2rem",
         fontWeight: 900,
       },
       h2: {
-        fontFamily: NUNITO_FONT,
+        fontFamily: SERIF_FONT,
         fontSize: "2.5rem",
         fontWeight: BOLD_WEIGHT,
       },
       h3: {
+        fontFamily: SERIF_FONT,
         fontSize: "2rem",
         fontWeight: BOLD_WEIGHT,
       },

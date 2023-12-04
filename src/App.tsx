@@ -17,7 +17,7 @@ function App() {
         <Fragment>
           <Box width="100%" height="100vh" position="relative" top={0}>
             <Header />
-            <Container>
+            <Container sx={{ p: isDesktop ? 4 : 0 }}>
               <Box component="main" mt={12}>
                 <Paper
                   sx={{

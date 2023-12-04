@@ -12,6 +12,7 @@ import {
 import { useContext } from "react";
 import { StoryContext } from "../../contexts/StoryContext";
 import { AccountCircle, FormatQuote, Tag } from "@mui/icons-material";
+import { StoryCharacter } from "../../types/main";
 
 export default function StoryInfo() {
   const theme = useTheme();
@@ -38,19 +39,19 @@ export default function StoryInfo() {
         <Link href={storyInfo.authorProfileLink}>{storyInfo.author}</Link>
       </Typography>
       <Box position="relative" mt={4} mb={6}>
-        <Typography>{storyInfo.summary}</Typography>
+        <Typography textAlign="center">{storyInfo.summary}</Typography>
         <Box
           position="absolute"
-          top={-30}
-          left={-20}
+          top={-20}
+          left={isDesktop ? 40 : 0}
           sx={{ opacity: 0.3, transform: "rotateY(180deg) scale(1.5)" }}
         >
           <FormatQuote color="primary" fontSize="large" />
         </Box>
         <Box
           position="absolute"
-          bottom={-25}
-          right={-20}
+          bottom={-20}
+          right={isDesktop ? 50 : 0}
           sx={{ opacity: 0.3, transform: "scale(1.2)" }}
         >
           <FormatQuote color="primary" fontSize="large" />
@@ -67,7 +68,7 @@ export default function StoryInfo() {
             Cast
           </Typography>
           <Stack direction="row" gap={1} id="characters" flexWrap="wrap">
-            {storyInfo.characters?.map((chara) => (
+            {storyInfo.characters?.map((chara: StoryCharacter) => (
               <Chip
                 label={chara.name}
                 color="primary"
@@ -99,7 +100,7 @@ export default function StoryInfo() {
             Tags
           </Typography>
           <Stack direction="row" gap={1} id="tags" flexWrap="wrap">
-            {storyInfo.tags?.map((tag) => (
+            {storyInfo.tags?.map((tag: string) => (
               <Chip
                 label={tag}
                 color="primary"

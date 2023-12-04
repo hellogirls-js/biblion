@@ -20,7 +20,7 @@ function HideOnScroll(props: { children: ReactElement }) {
   });
 
   return (
-    <Slide appear in={!trigger} timeout={500}>
+    <Slide appear in={!trigger} timeout={800}>
       {children}
     </Slide>
   );
@@ -57,6 +57,7 @@ export default function Header() {
           <Toolbar
             sx={{
               alignItems: "center",
+              justifyContent: "space-evenly",
               gap: 1,
               boxSizing: "border-box",
               py: 1,
@@ -65,19 +66,17 @@ export default function Header() {
               },
             }}
           >
+            <Typography
+              variant="h1"
+              component="h1"
+              fontWeight={900}
+              color={theme.palette.text.primary}
+            >
+              BIBLION
+            </Typography>
             <IconButton onClick={colorMode.toggleColorMode} color="primary">
               {theme.palette.mode === "light" ? <LightMode /> : <DarkMode />}
             </IconButton>
-            <Box>
-              <Typography
-                variant="h3"
-                component="h1"
-                fontWeight={900}
-                color={theme.palette.text.primary}
-              >
-                BIBLION
-              </Typography>
-            </Box>
           </Toolbar>
         </AppBar>
       </Box>

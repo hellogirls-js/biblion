@@ -1,12 +1,8 @@
 import {
   AppBar,
   Box,
-  FormControl,
   IconButton,
-  InputAdornment,
-  OutlinedInput,
   Slide,
-  Stack,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -15,7 +11,7 @@ import {
 } from "@mui/material";
 import { ReactElement, useContext } from "react";
 import { ColorModeContext } from "../../contexts/ColorMode";
-import { DarkMode, LightMode, Search } from "@mui/icons-material";
+import { DarkMode, LightMode } from "@mui/icons-material";
 
 function HideOnScroll(props: { children: ReactElement }) {
   const { children } = props;
@@ -28,24 +24,24 @@ function HideOnScroll(props: { children: ReactElement }) {
   );
 }
 
-function SearchBar() {
-  return (
-    <FormControl variant="outlined" aria-label="Search bar">
-      <OutlinedInput
-        id="header__search-bar"
-        type="text"
-        aria-label="Search"
-        placeholder="Search"
-        size="small"
-        startAdornment={
-          <InputAdornment position="start">
-            <Search />
-          </InputAdornment>
-        }
-      />
-    </FormControl>
-  );
-}
+// function SearchBar() {
+//   return (
+//     <FormControl variant="outlined" aria-label="Search bar">
+//       <OutlinedInput
+//         id="header__search-bar"
+//         type="text"
+//         aria-label="Search"
+//         placeholder="Search"
+//         size="small"
+//         startAdornment={
+//           <InputAdornment position="start">
+//             <Search />
+//           </InputAdornment>
+//         }
+//       />
+//     </FormControl>
+//   );
+// }
 
 export default function Header() {
   const colorMode = useContext(ColorModeContext);

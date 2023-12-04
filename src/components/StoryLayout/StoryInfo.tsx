@@ -20,9 +20,9 @@ export default function StoryInfo() {
 
   return (
     <Paper
-      sx={(theme) => ({
+      sx={{
         p: 8,
-      })}
+      }}
     >
       <Typography
         variant="h2"

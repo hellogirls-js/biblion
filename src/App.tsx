@@ -1,4 +1,4 @@
-import { Box, Container, Link, Paper } from "@mui/material";
+import { Box, Container, Paper } from "@mui/material";
 import Header from "./components/StoryLayout/Header";
 import ColorModeProvider from "./contexts/ColorMode";
 import NowReading from "./components/StoryLayout/NowReading";

@@ -1,10 +1,10 @@
 import { Fragment, useContext } from "react";
 import { StoryContext } from "../contexts/StoryContext";
-import { Typography, useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 
 export default function Story() {
-  const theme = useTheme();
   const storyInfo = useContext(StoryContext);
+
   return (
     <Fragment>
       <Typography

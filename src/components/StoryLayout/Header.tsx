@@ -15,7 +15,9 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 
 function HideOnScroll(props: { children: ReactElement }) {
   const { children } = props;
-  const trigger = useScrollTrigger();
+  const trigger = useScrollTrigger({
+    threshold: 25,
+  });
 
   return (
     <Slide appear in={!trigger} timeout={500}>
@@ -67,7 +69,12 @@ export default function Header() {
               {theme.palette.mode === "light" ? <LightMode /> : <DarkMode />}
             </IconButton>
             <Box>
-              <Typography variant="h3" component="h1" fontWeight={900}>
+              <Typography
+                variant="h3"
+                component="h1"
+                fontWeight={900}
+                color={theme.palette.text.primary}
+              >
                 BIBLION
               </Typography>
             </Box>

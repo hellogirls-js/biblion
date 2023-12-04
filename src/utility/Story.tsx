@@ -156,9 +156,9 @@ export default function Story() {
       </p>
 
       <p>
-        “WILL YA CALM DOWN?!” Rinne finally bolted up from the sofa to approach
-        Niki’s alleged brother. “Niki’s at work! Nothing happened to him,
-        okay?!”
+        “<strong>WILL YA CALM DOWN?!</strong>” Rinne finally bolted up from the
+        sofa to approach Niki’s alleged brother. “Niki’s at work! Nothing
+        happened to him, okay?!”
       </p>
 
       <p>

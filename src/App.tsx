@@ -1,4 +1,4 @@
-import { Box, Container, Paper } from "@mui/material";
+import { Box, Container, Paper, useMediaQuery, useTheme } from "@mui/material";
 import Header from "./components/StoryLayout/Header";
 import ColorModeProvider from "./contexts/ColorMode";
 import NowReading from "./components/StoryLayout/NowReading";
@@ -8,6 +8,9 @@ import { Fragment } from "react";
 import Story from "./utility/Story";
 
 function App() {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+
   return (
     <ColorModeProvider>
       <StoryProvider>
@@ -16,7 +19,14 @@ function App() {
             <Header />
             <Container>
               <Box component="main" mt={12}>
-                <Paper sx={{ px: 3, py: 1, boxSizing: "border-box", mb: 10 }}>
+                <Paper
+                  sx={{
+                    px: isDesktop ? 3 : 2,
+                    py: 3,
+                    boxSizing: "border-box",
+                    mb: 10,
+                  }}
+                >
                   <StoryInfo />
                   <Story />
                 </Paper>

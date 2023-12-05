@@ -18,7 +18,7 @@ export const LIGHT_PALETTE = {
   subtext2: "hsl(233, 10%, 47%)",
   base: "hsl(220, 23%, 95%)",
   mantle: "hsl(220, 22%, 92%)",
-  crust: "#hsl(220, 21%, 89%)",
+  crust: "hsl(220, 21%, 89%)",
   surface0: "hsl(223, 16%, 83%)",
   surface1: "hsl(225, 14%, 77%)",
   surface2: "hsl(227, 12%, 71%)",

@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { motion, useScroll } from "framer-motion";
 import { ReactElement, useContext } from "react";
-import { DARK_PALETTE, LIGHT_PALETTE } from "../../utility/colors";
+import { DARK_PALETTE, LIGHT_PALETTE, toHSLObject } from "../../utility/colors";
 import { StoryContext } from "../../contexts/StoryContext";
 
 function ShowOnScroll(props: { children: ReactElement }) {
@@ -54,8 +54,8 @@ function StoryBuffer() {
         sx={{
           backgroundColor:
             theme.palette.mode === "light"
-              ? LIGHT_PALETTE.surface0
-              : DARK_PALETTE.surface0,
+              ? LIGHT_PALETTE.mantle
+              : DARK_PALETTE.mantle,
         }}
       >
         <Box
@@ -80,6 +80,9 @@ export default function NowReading() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
   const storyInfo = useContext(StoryContext);
 
+  const baseHSLObj = toHSLObject(theme.palette.background.paper);
+  const primaryHSLObj = toHSLObject(theme.palette.primary.main);
+
   return (
     <ShowOnScroll>
       <Box width="100vw" sx={{ position: "fixed", bottom: 0 }}>
@@ -93,6 +96,21 @@ export default function NowReading() {
               borderRadius: `${theme.shape.borderRadius * 3}px ${
                 theme.shape.borderRadius * 3
               }px 0 0`,
+              backgroundColor: `hsl(${
+                primaryHSLObj.hue - (theme.palette.mode === "dark" ? 5 : 0)
+              }, ${
+                primaryHSLObj.saturation -
+                (theme.palette.mode === "dark" ? 42 : 0)
+              }%, ${
+                baseHSLObj.lightness - (theme.palette.mode === "light" ? 5 : -7)
+              }%)`,
+              color: `hsl(${primaryHSLObj.hue}, ${
+                primaryHSLObj.saturation -
+                (theme.palette.mode === "light" ? 65 : 10)
+              }%, ${
+                primaryHSLObj.lightness -
+                (theme.palette.mode === "light" ? 25 : -5)
+              }%)`,
             }}
           >
             <Stack direction="row" gap={isDesktop ? 3 : 1} width="100%">

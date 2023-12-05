@@ -236,6 +236,12 @@ export default function StoryInfo() {
           </Stack>
         </Box>
       </Stack>
+      <Box mt={6} mx="auto">
+        <Typography fontWeight={700}>Author's note:</Typography>
+        <Paper elevation={0} sx={{ p: 3, mt: 1 }}>
+          {storyInfo.note}
+        </Paper>
+      </Box>
     </Paper>
   );
 }

@@ -37,4 +37,5 @@ interface StoryType {
   storyIcon?: string;
   characters?: StoryCharacter[];
   tags?: string[];
+  note?: ReactElement;
 }

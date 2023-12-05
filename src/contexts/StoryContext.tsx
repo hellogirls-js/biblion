@@ -1,6 +1,6 @@
 import { Fragment, ReactElement, createContext } from "react";
 import { StoryType } from "../types/main";
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 
 const defaultValue: StoryType = {
   title: "niki nii-san",
@@ -31,6 +31,19 @@ const defaultValue: StoryType = {
     },
   ],
   tags: ["Alternate Universe", "Niki has a twin brother"],
+  note: (
+    <Fragment>
+      <Typography component="p" fontSize="0.9rem">
+        this mini-fic was inspired by{" "}
+        <Link href="https://twitter.com/niki_pan08">niki_pan08</Link>'s au where
+        niki has an older twin brother who looks like his beta design!
+      </Typography>
+      <Typography component="p" fontSize="0.9rem">
+        i'm only really capable of writing exposition and have never really
+        written a fic with plot before so... i hope you enjoy?
+      </Typography>
+    </Fragment>
+  ),
 };
 
 export const StoryContext = createContext<StoryType>(defaultValue);

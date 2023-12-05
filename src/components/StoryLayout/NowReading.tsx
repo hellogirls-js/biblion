@@ -85,7 +85,7 @@ export default function NowReading() {
       <Box width="100vw" sx={{ position: "fixed", bottom: 0 }}>
         <Box width={"95%"} margin="auto">
           <Paper
-            elevation={0}
+            elevation={4}
             sx={{
               px: isDesktop ? 10 : 2,
               py: 3,
@@ -93,7 +93,6 @@ export default function NowReading() {
               borderRadius: `${theme.shape.borderRadius * 3}px ${
                 theme.shape.borderRadius * 3
               }px 0 0`,
-              border: `1px solid ${theme.palette.divider}`,
             }}
           >
             <Stack direction="row" gap={isDesktop ? 3 : 1} width="100%">

@@ -87,7 +87,14 @@ export default function ColorModeProvider({
           }
           p {
             line-height: 2;
-            margin: 70px 0px;
+            font-size: 1rem;
+            margin: 70px auto;
+            max-width: 50em;
+          }
+          ::selection {
+            background: ${
+              mode === "light" ? LIGHT_PALETTE.surface2 : DARK_PALETTE.surface2
+            }
           }
         `,
       },

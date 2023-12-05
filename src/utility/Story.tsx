@@ -1,9 +1,10 @@
 import { Fragment, useContext } from "react";
 import { StoryContext } from "../contexts/StoryContext";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 
 export default function Story() {
   const storyInfo = useContext(StoryContext);
+  const theme = useTheme();
 
   return (
     <Fragment>
@@ -13,6 +14,7 @@ export default function Story() {
         component="h3"
         textAlign="center"
         fontSize="1.8rem"
+        color={theme.palette.primary.main}
       >
         Chapter 1: {storyInfo.chapters[0]}
       </Typography>

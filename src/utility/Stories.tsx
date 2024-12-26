@@ -380,21 +380,6 @@ export const stories: StoryType[] = [
               Crazy:B lives. Rinne’s cheeks lifted with the realization his life
               wasn’t the only one saved by Niki.
             </p>
-            <p>
-              He found the club president’s Twitter account on their official
-              website. Rinne chuckled when he saw they followed him on Twitter.
-              As expected from a fan of Crazy:B.
-            </p>
-            <p>
-              The president posted very frequently, they spoke energetically
-              online and their enthusiasm even spread to those who were not
-              devoted to Crazy:B. They regularly reacted to official Crazy:B
-              announcements in a dramatic way that made their emotions loud and
-              clear. Rinne couldn’t help but imagine what they would be like in
-              real life, if their energy would burst out and force Niki to
-              realize he is loved and has always been loved. He looked up from
-              his phone in thought.
-            </p>
             <p>“Oh, Niki. You’re in good hands.”</p>
           </Fragment>
         ),

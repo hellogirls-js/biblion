@@ -1,10 +1,13 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Link, Outlet } from "react-router-dom";
 import ModeButton from "../components/ModeButton";
 
 export default function Root() {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+
   return (
-    <Box p={4}>
+    <Box p={isDesktop ? 4 : 1}>
       <Stack direction="row" gap={2} alignItems="center">
         <ModeButton />{" "}
         <Typography
@@ -16,7 +19,7 @@ export default function Root() {
           BIBLION
         </Typography>
       </Stack>
-      <Box px={4} py={2}>
+      <Box px={isDesktop ? 4 : 0} py={2}>
         <Outlet />
       </Box>
     </Box>

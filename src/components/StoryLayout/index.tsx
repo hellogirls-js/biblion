@@ -22,8 +22,8 @@ export default function StoryLayout({
           <Box component="main" mt={isDesktop ? 4 : 0}>
             <Paper
               sx={{
-                px: 3,
-                py: isDesktop ? 3 : 8,
+                px: isDesktop ? 3 : 1,
+                py: isDesktop ? 3 : 1,
                 boxSizing: "border-box",
                 mb: 10,
               }}

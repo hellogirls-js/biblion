@@ -9,15 +9,12 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useContext } from "react";
-import { StoryContext } from "../../contexts/StoryContext";
 import { AccountCircle, Tag } from "@mui/icons-material";
-import { StoryCharacter } from "../../types/main";
+import { StoryCharacter, StoryType } from "../../types/main";
 import { toHSLObject } from "../../utility/colors";
 
-export default function StoryInfo() {
+export default function StoryInfo({ storyInfo }: { storyInfo: StoryType }) {
   const theme = useTheme();
-  const storyInfo = useContext(StoryContext);
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 
   const baseHSLObj = toHSLObject(theme.palette.background.paper);

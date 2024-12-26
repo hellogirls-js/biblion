@@ -13,9 +13,10 @@ import {
   useTheme,
 } from "@mui/material";
 import { motion, useScroll } from "framer-motion";
-import { ReactElement, useContext } from "react";
+import { ReactElement } from "react";
 import { DARK_PALETTE, LIGHT_PALETTE, toHSLObject } from "../../utility/colors";
-import { StoryContext } from "../../contexts/StoryContext";
+import { StoryType } from "../../types/main";
+import { Link as NavLink } from "react-router-dom";
 
 function ShowOnScroll(props: { children: ReactElement }) {
   const { children } = props;
@@ -28,7 +29,13 @@ function ShowOnScroll(props: { children: ReactElement }) {
   );
 }
 
-function StoryBuffer() {
+function StoryBuffer({
+  storyInfo,
+  chapter,
+}: {
+  storyInfo: StoryType;
+  chapter: number;
+}) {
   const { scrollYProgress } = useScroll();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
@@ -42,7 +49,12 @@ function StoryBuffer() {
       gap={1}
     >
       <Tooltip title="Previous chapter">
-        <IconButton color="primary">
+        <IconButton
+          component={NavLink}
+          color="primary"
+          disabled={chapter <= 1}
+          to={`?chapter=${chapter - 1}`}
+        >
           <FastRewind fontSize={isDesktop ? "large" : "medium"} />
         </IconButton>
       </Tooltip>
@@ -67,7 +79,12 @@ function StoryBuffer() {
         />
       </Box>
       <Tooltip title="Next chapter">
-        <IconButton color="primary">
+        <IconButton
+          color="primary"
+          disabled={chapter >= storyInfo.chapters.length}
+          component={NavLink}
+          to={`?chapter=${chapter + 1}`}
+        >
           <FastForward fontSize={isDesktop ? "large" : "medium"} />
         </IconButton>
       </Tooltip>
@@ -75,17 +92,24 @@ function StoryBuffer() {
   );
 }
 
-export default function NowReading() {
+export default function NowReading({
+  storyInfo,
+  chapter = 1,
+}: {
+  storyInfo: StoryType;
+  chapter?: number;
+}) {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
-  const storyInfo = useContext(StoryContext);
 
   const baseHSLObj = toHSLObject(theme.palette.background.paper);
   const primaryHSLObj = toHSLObject(theme.palette.primary.main);
 
+  console.log(storyInfo, chapter);
+
   return (
     <ShowOnScroll>
-      <Box width="100vw" sx={{ position: "fixed", bottom: 0 }}>
+      <Box width="100vw" sx={{ position: "fixed", bottom: 0, left: 0 }}>
         <Box width={"95%"} margin="auto">
           <Paper
             elevation={4}
@@ -149,7 +173,8 @@ export default function NowReading() {
                       overflow="hidden"
                       whiteSpace="nowrap"
                     >
-                      {storyInfo.chapters[0]}
+                      {storyInfo.chapters[chapter - 1]?.title ??
+                        `Chapter ${chapter}`}
                     </Typography>
                     <Stack direction="row" gap={1} alignItems="center">
                       <Typography
@@ -176,7 +201,7 @@ export default function NowReading() {
                   </Stack>
                 </Stack>
                 <Box height={5} width="100%" flexGrow={isDesktop ? 1 : 0}>
-                  <StoryBuffer />
+                  <StoryBuffer {...{ storyInfo, chapter }} />
                 </Box>
               </Stack>
             </Stack>

@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
 const catppuccinColorNames = [
   "rosewater",
@@ -33,7 +33,7 @@ interface StoryType {
   author: string;
   authorProfileLink?: string;
   summary?: string | ReactElement;
-  chapters: string[];
+  chapters: Array<{ title: string | null; content: ReactNode }>;
   storyIcon?: string;
   characters?: StoryCharacter[];
   tags?: string[];

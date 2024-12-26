@@ -20,7 +20,6 @@ const BOLD_WEIGHT = 700;
 
 export const ColorModeContext = createContext<ColorModeContextType>({
   toggleColorMode: () => {
-    console.log("L");
   },
 });
 
@@ -122,7 +121,6 @@ export default function ColorModeProvider({
   });
 
   const theme = useMemo(() => {
-    console.log("toggle");
     return createTheme(getDesignTokens(themeMode), [themeMode]);
   }, [themeMode]);
 

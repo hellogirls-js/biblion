@@ -105,8 +105,6 @@ export default function NowReading({
   const baseHSLObj = toHSLObject(theme.palette.background.paper);
   const primaryHSLObj = toHSLObject(theme.palette.primary.main);
 
-  console.log(storyInfo, chapter);
-
   return (
     <ShowOnScroll>
       <Box width="100vw" sx={{ position: "fixed", bottom: 0, left: 0 }}>

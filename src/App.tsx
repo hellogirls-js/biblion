@@ -1,5 +1,5 @@
 import ColorModeProvider from "./contexts/ColorMode";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import StoryPage from "./routes/Story";
 import Root from "./routes/Root";
@@ -7,14 +7,14 @@ import Root from "./routes/Root";
 function App() {
   return (
     <ColorModeProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
-          <Route path="/biblion" element={<Root />}>
+          <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
-            <Route path=":storyTitle" element={<StoryPage />} />
+            <Route path="/:storyTitle" element={<StoryPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ColorModeProvider>
   );
 }

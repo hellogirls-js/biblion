@@ -13,7 +13,7 @@ export default function Root() {
         <Typography
           variant="h1"
           component={Link}
-          to="/biblion"
+          to="/"
           sx={{ color: "inherit", textDecoration: "none" }}
         >
           BIBLION

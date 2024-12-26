@@ -11,7 +11,7 @@ export default function Home() {
           <Paper sx={{ p: 2 }}>
             <Link
               component={NavLink}
-              to={`/biblion/${story.title.replaceAll(" ", "-")}`}
+              to={`/${story.title.replaceAll(" ", "-")}`}
               sx={{
                 fontWeight: 600,
                 fontSize: "1.5rem",
@@ -25,7 +25,7 @@ export default function Home() {
               <Box mt={2}>
                 <Typography fontWeight="bold">Characters:</Typography>{" "}
                 {story.characters.map((chara, index) => (
-                  <Typography sx={{ display: "inline" }}>
+                  <Typography key={chara.name} sx={{ display: "inline" }}>
                     {chara.name}
                     {index < (story.characters?.length ?? 0) - 1 ? ", " : ""}
                   </Typography>
@@ -36,7 +36,9 @@ export default function Home() {
               <Box mt={2}>
                 <Typography fontWeight="bold">Tags:</Typography>
                 {story.tags.map((tag) => (
-                  <Typography sx={{ display: "inline" }}>#{tag} </Typography>
+                  <Typography key={tag} sx={{ display: "inline" }}>
+                    #{tag}{" "}
+                  </Typography>
                 ))}
               </Box>
             )}
